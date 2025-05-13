@@ -24,6 +24,14 @@ Fixed::Fixed(const Fixed &obj) {
 	std::cout << "Copy constructor called" << std::endl;
 }
 
+Fixed&	Fixed::operator=(const Fixed& other) {
+	std::cout << "Copy assignement called" << std::endl;
+	if (this != &other) {
+		this->_numberValue = other._numberValue;
+	}
+	return (*this);
+}
+
 Fixed::~Fixed(void) {
 	std::cout << "Destructor called" << std::endl;
 }
