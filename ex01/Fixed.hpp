@@ -15,6 +15,7 @@
 
 # include <cstdlib>
 # include <iostream>
+# include <cmath>
 
 class Fixed {
 
@@ -27,6 +28,7 @@ class Fixed {
 
 	Fixed(void);
 	Fixed(const int intValue);
+	Fixed(const float floatValue);
 	Fixed(const Fixed &obj);
 	Fixed& operator=(const Fixed& other);
 	~Fixed(void);

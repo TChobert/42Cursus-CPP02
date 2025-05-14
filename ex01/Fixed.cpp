@@ -24,6 +24,11 @@ Fixed::Fixed(const int intValue) {
 	_numberValue = (intValue * (1 << fractionalBitsNb));
 }
 
+Fixed::Fixed(const float floatValue) {
+	std::cout << "Float constructor called" << std::endl;
+	_numberValue = (std::roundf(floatValue * (1 << fractionalBitsNb)));
+}
+
 Fixed::Fixed(const Fixed &obj) {
 	_numberValue = obj._numberValue;
 	std::cout << "Copy constructor called" << std::endl;
