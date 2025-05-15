@@ -76,6 +76,39 @@ bool	Fixed::operator>(const Fixed& other) const {
 
 // Arithmetic operators
 
+Fixed	Fixed::operator+(const Fixed& other) const {
+	Fixed	result;
+
+	result.setRawBits(this->_numberValue + other._numberValue);
+	return (result);
+}
+
+Fixed	Fixed::operator-(const Fixed& other) const {
+	Fixed	result;
+
+	result.setRawBits(this->_numberValue - other._numberValue);
+	return (result);
+}
+
+Fixed	Fixed::operator*(const Fixed& other) const {
+	Fixed	result;
+	long long tmp;
+	 
+	tmp = static_cast<long long>(this->_numberValue) * other._numberValue;
+	tmp = tmp >> fractionalBitsNb;
+	result.setRawBits(static_cast<int>(tmp));
+	return (result);
+}
+
+Fixed	Fixed::operator/(const Fixed& other) const {
+	Fixed	result;
+	long long tmp;
+
+	tmp = (static_cast<long long>(this->_numberValue) << fractionalBitsNb) / other._numberValue;
+	result.setRawBits(static_cast<int>(tmp));
+	return (result);
+}
+
 // OS operator
 
 std::ostream&	operator<<(std::ostream& os, const Fixed &fixed) {

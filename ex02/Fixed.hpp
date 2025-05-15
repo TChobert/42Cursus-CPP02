@@ -37,7 +37,10 @@ class Fixed {
 	bool	operator>=(const Fixed& other) const;
 	bool	operator<(const Fixed& other) const;
 	bool	operator>(const Fixed& other) const;
-	bool	operator+
+	Fixed	operator+(const Fixed& other) const;
+	Fixed	operator-(const Fixed& other) const;
+	Fixed	operator*(const Fixed& other) const;
+	Fixed	operator/(const Fixed& other) const;
 	friend std::ostream& operator<<(std::ostream& os, const Fixed &fixed);
 	~Fixed(void);
 	int		getRawBits(void) const;
