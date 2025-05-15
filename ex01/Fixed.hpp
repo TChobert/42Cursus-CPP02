@@ -31,9 +31,12 @@ class Fixed {
 	Fixed(const float floatValue);
 	Fixed(const Fixed &obj);
 	Fixed& operator=(const Fixed& other);
+	friend std::ostream& operator<<(std::ostream& os, const Fixed &fixed);
 	~Fixed(void);
 	int		getRawBits(void) const;
 	void	setRawBits(int const raw);
+	int		toInt(void) const;
+	float	toFloat(void) const;
 };
 
 #endif
