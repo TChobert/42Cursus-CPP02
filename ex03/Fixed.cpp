@@ -18,26 +18,21 @@ const int	Fixed::fractionalBitsNb = 8;
 
 Fixed::Fixed(void) {
 	_numberValue = 0;
-	std::cout << "Default constructor called" << std::endl;
 }
 
 Fixed::Fixed(const int intValue) {
-	std::cout << "Int constructor called" << std::endl;
 	_numberValue = (intValue * (1 << fractionalBitsNb));
 }
 
 Fixed::Fixed(const float floatValue) {
-	std::cout << "Float constructor called" << std::endl;
 	_numberValue = (roundf(floatValue * (1 << fractionalBitsNb)));
 }
 
 Fixed::Fixed(const Fixed &obj) {
 	_numberValue = obj._numberValue;
-	std::cout << "Copy constructor called" << std::endl;
 }
 
 Fixed&	Fixed::operator=(const Fixed& other) {
-	std::cout << "Copy assignement operator called" << std::endl;
 	if (this != &other) {
 		this->_numberValue = other._numberValue;
 	}
@@ -45,7 +40,6 @@ Fixed&	Fixed::operator=(const Fixed& other) {
 }
 
 Fixed::~Fixed(void) {
-	std::cout << "Destructor called" << std::endl;
 }
 
 //Comparisons operators

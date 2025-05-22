@@ -8,7 +8,7 @@ RESET =\033[0m
 
 ## TARGET ##
 
-NAME := fixed_test
+NAME := BSPtest
 
 ## COMPILATION ##
 
@@ -31,12 +31,15 @@ endif
 
 SRCS += main.cpp
 SRCS += Fixed.cpp
+SRCS += Point.cpp
+SRCS += bsp.cpp
 
 ## INCLUDES ##
 
 INCLUDES_DIR := .
 
 INCLUDES += Fixed.hpp
+INCLUDES += Point.hpp
 
 ## OBJECTS ##
 
@@ -48,7 +51,7 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) -I$(INCLUDES_DIR) $(OBJS) -o $(NAME)
-	@echo "$(GREEN)Fixed test compiled!$(RESET)"
+	@echo "$(GREEN)BSP test compiled!$(RESET)"
 
 $(OBJS): %.o: %.cpp
 	$(CC) $(CFLAGS) -I$(INCLUDES_DIR) -c $< -o $@
