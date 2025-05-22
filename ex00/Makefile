@@ -12,7 +12,7 @@ NAME := fixed_test
 
 ## COMPILATION ##
 
-CC := g++
+CC := c++
 
 CFLAGS += -Wall
 CFLAGS += -Wextra
