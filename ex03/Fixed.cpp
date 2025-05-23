@@ -16,20 +16,16 @@ const int	Fixed::fractionalBitsNb = 8;
 
 // Constructors and destructor
 
-Fixed::Fixed(void) {
-	_numberValue = 0;
+Fixed::Fixed(void) : _numberValue(0) {
 }
 
-Fixed::Fixed(const int intValue) {
-	_numberValue = (intValue * (1 << fractionalBitsNb));
+Fixed::Fixed(const int intValue) : _numberValue(intValue * (1 << fractionalBitsNb)) {
 }
 
-Fixed::Fixed(const float floatValue) {
-	_numberValue = (roundf(floatValue * (1 << fractionalBitsNb)));
+Fixed::Fixed(const float floatValue) : _numberValue(roundf(floatValue * (1 << fractionalBitsNb))) {
 }
 
-Fixed::Fixed(const Fixed &obj) {
-	_numberValue = obj._numberValue;
+Fixed::Fixed(const Fixed &obj) : _numberValue(obj._numberValue) {
 }
 
 Fixed&	Fixed::operator=(const Fixed& other) {

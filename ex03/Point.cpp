@@ -24,6 +24,7 @@ Point::Point(const Point& other) : _x(other._x), _y(other._y) {
 }
 
 Point&	Point::operator=(const Point& other) {
+	(void)other;
 	return (*this);
 }
 

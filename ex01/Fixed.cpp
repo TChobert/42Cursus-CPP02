@@ -19,9 +19,8 @@ Fixed::Fixed(void) {
 	std::cout << "Default constructor called" << std::endl;
 }
 
-Fixed::Fixed(const int intValue) {
+Fixed::Fixed(const int intValue) :  _numberValue(intValue * (1 << fractionalBitsNb)) {
 	std::cout << "Int constructor called" << std::endl;
-	_numberValue = (intValue * (1 << fractionalBitsNb));
 }
 
 Fixed::Fixed(const float floatValue) {

@@ -17,8 +17,10 @@ int main( void ) {
 	Fixed a;
 	Fixed b(a);
 	Fixed c;
+	Fixed d;
 
 	c = b;
+	d = a;
 	std::cout << a.getRawBits() << std::endl;
 	std::cout << b.getRawBits() << std::endl;
 	std::cout << c.getRawBits() << std::endl;

@@ -14,13 +14,11 @@
 
 const int	Fixed::fractionalBitsNb = 8;
 
-Fixed::Fixed(void) {
-	_numberValue = 0;
+Fixed::Fixed(void) : _numberValue(0) {
 	std::cout << "Default constructor called" << std::endl;
 }
 
-Fixed::Fixed(const Fixed &obj) {
-	_numberValue = obj._numberValue;
+Fixed::Fixed(const Fixed &other) : _numberValue(other._numberValue) {
 	std::cout << "Copy constructor called" << std::endl;
 }
 

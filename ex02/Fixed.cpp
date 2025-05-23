@@ -16,23 +16,19 @@ const int	Fixed::fractionalBitsNb = 8;
 
 // Constructors and destructor
 
-Fixed::Fixed(void) {
-	_numberValue = 0;
+Fixed::Fixed(void) : _numberValue(0) {
 	std::cout << "Default constructor called" << std::endl;
 }
 
-Fixed::Fixed(const int intValue) {
+Fixed::Fixed(const int intValue) : _numberValue(intValue * (1 << fractionalBitsNb)) {
 	std::cout << "Int constructor called" << std::endl;
-	_numberValue = (intValue * (1 << fractionalBitsNb));
 }
 
-Fixed::Fixed(const float floatValue) {
+Fixed::Fixed(const float floatValue) : _numberValue(roundf(floatValue * (1 << fractionalBitsNb))) {
 	std::cout << "Float constructor called" << std::endl;
-	_numberValue = (roundf(floatValue * (1 << fractionalBitsNb)));
 }
 
-Fixed::Fixed(const Fixed &obj) {
-	_numberValue = obj._numberValue;
+Fixed::Fixed(const Fixed &obj) : _numberValue(obj._numberValue) {
 	std::cout << "Copy constructor called" << std::endl;
 }
 
